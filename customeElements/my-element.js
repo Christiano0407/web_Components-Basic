@@ -7,9 +7,13 @@ let imgUrl;
 
 //**TODO ==> Create Template === */
 const template = document.createElement(`div`);
+template.setAttribute(`class`, `template_component`);
 template.innerHTML = `
 
 <style>
+    div {
+        width: 100%;
+    }
     .template-component {
         width: 100%;
         margin: 1rem auto;
