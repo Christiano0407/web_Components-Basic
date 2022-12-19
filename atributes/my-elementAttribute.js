@@ -1,12 +1,32 @@
 //** === === ===  =================================================== Attributes / Shadow DOM ========================================== === === ===  */
+//**TODO ===  Attribute & Attribute ChangedCallback === */
 class myElementAttribute extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' }); // => Shadow
     //=== Add Attributes
-    this.title = this.getAttribute(`title`);
+    /* this.title = this.getAttribute(`title`);
     this.paragraph = this.getAttribute(`paragraph`);
-    this.img = this.getAttribute(`img`);
+    this.img = this.getAttribute(`img`); */
+  }
+
+  // === Attribute ChangeCallback ===
+  static get observedAttributes() {
+    return ['title', 'paragraph', 'img'];
+  }
+
+  attributeChangedCallback(attr, oldVal, newVal) {
+    if (attr === 'title' && oldVal !== newVal) {
+      this.title = newVal;
+    }
+
+    if (attr === 'paragraph' && oldVal !== newVal) {
+      this.paragraph = newVal;
+    }
+
+    if (attr === 'img' && oldVal !== newVal) {
+      this.img = newVal;
+    }
   }
 
   getTemplateShadow() {
@@ -23,6 +43,7 @@ class myElementAttribute extends HTMLElement {
             <h2>${this.title}</h2>
             <div>
                 <p>${this.paragraph}</p>
+                <img src="${this.img}">
                 <img src="${this.img}">
             </div>
         </section>
@@ -46,7 +67,7 @@ class myElementAttribute extends HTMLElement {
         }
         h2 {
           color: blue;
-            font-size: 15px;
+            font-size: 24px;
             font-weight: 700;
         }
         h3 {
