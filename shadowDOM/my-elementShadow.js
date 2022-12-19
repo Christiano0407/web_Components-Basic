@@ -12,11 +12,12 @@ class myElementShadow extends HTMLElement {
 
     shadowTemplate.innerHTML = ` 
         <section>
-            <h1>Hello World!!</h1>
+            <h2>Hello World!!</h2>
             <div>
                 <h3>Shadow DOM & Web Component!</h3>
             </div>
         </section>
+        ${this.getStyle()};
      `;
     return shadowTemplate;
   }
@@ -34,9 +35,14 @@ class myElementShadow extends HTMLElement {
         div {
             width: 100%;
         }
+        h2 {
+          color: blue;
+            font-size: 15px;
+            font-weight: 700;
+        }
         h3 {
             color: red;
-            font-size: 20px;
+            font-size: 12px;
             font-weight: 700;
         }
     </style>
