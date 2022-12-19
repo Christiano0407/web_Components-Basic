@@ -12,9 +12,9 @@ class myElementShadow extends HTMLElement {
 
     shadowTemplate.innerHTML = ` 
         <section>
-            <h2>Hello World!!</h2>
+            <h2 class="title">Hello World!!</h2>
             <div>
-                <h3>Shadow DOM & Web Component!</h3>
+                <h3 class="title-text">Shadow DOM & Web Component!</h3>
             </div>
         </section>
         ${this.getStyle()};
