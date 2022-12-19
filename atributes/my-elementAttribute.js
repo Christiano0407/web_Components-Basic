@@ -3,6 +3,10 @@ class myElementAttribute extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' }); // => Shadow
+    //=== Add Attributes
+    this.title = this.getAttribute(`title`);
+    this.paragraph = this.getAttribute(`paragraph`);
+    this.img = this.getAttribute(`img`);
   }
 
   getTemplateShadow() {
@@ -14,14 +18,12 @@ class myElementAttribute extends HTMLElement {
             <div>
                 <h3 class="title-text">Shadow DOM & Web Component!</h3>
             </div>
+        </section>
+        <section>
+            <h2>${this.title}</h2>
             <div>
-                <h3>
-                    <slot></slot>
-                </h3>
-            </div>
-            <div>
-                <slot name="titlePlus"></slot>
-                <slot name="paragraphPlus"></slot>
+                <p>${this.paragraph}</p>
+                <img src="${this.img}">
             </div>
         </section>
         ${this.getStyle()};
@@ -51,6 +53,21 @@ class myElementAttribute extends HTMLElement {
             color: red;
             font-size: 12px;
             font-weight: 700;
+        }
+        p {
+            letter-spacing: .5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #333;
+        }
+        img {
+            object-fit: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 10px;
+            height: 400px;
+            width: 200px;
         }
     </style>
         `;
