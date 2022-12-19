@@ -10,11 +10,11 @@ class myElementAttribute extends HTMLElement {
     this.img = this.getAttribute(`img`); */
   }
 
-  // === Attribute ChangeCallback ===
+  // === Observer of Attribute ChangeCallback === 01
   static get observedAttributes() {
-    return ['title', 'paragraph', 'img'];
+    return ['title', 'paragraph', 'img', 'image'];
   }
-
+  // === Attribute ChangeCallback === 02
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr === 'title' && oldVal !== newVal) {
       this.title = newVal;
@@ -26,6 +26,10 @@ class myElementAttribute extends HTMLElement {
 
     if (attr === 'img' && oldVal !== newVal) {
       this.img = newVal;
+    }
+
+    if (attr === 'image' && oldVal !== newVal) {
+      this.image = newVal;
     }
   }
 
@@ -44,7 +48,7 @@ class myElementAttribute extends HTMLElement {
             <div>
                 <p>${this.paragraph}</p>
                 <img src="${this.img}">
-                <img src="${this.img}">
+                <img src="${this.image}">
             </div>
         </section>
         ${this.getStyle()};
