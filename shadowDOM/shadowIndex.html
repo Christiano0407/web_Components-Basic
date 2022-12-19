@@ -11,7 +11,11 @@
     <main>
       <h1>Hello! My World I'ts your world!!</h1>
       <!-- === Web Component === -->
-      <my-element></my-element>
+      <my-element>
+        I'm Content Slot! Plus & Element
+        <h1 slot="title">I'm Title of Slot</h1>
+        <p slot="paragraph">Slot Text with element Plus.</p>
+      </my-element>
     </main>
 
     <!-- === Javascript === -->
