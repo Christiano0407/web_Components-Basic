@@ -21,7 +21,7 @@ class myElementShadow extends HTMLElement {
      `;
     return shadowTemplate;
   }
-
+  // === CSS Styles ===
   getStyle() {
     return `
     <style>
@@ -48,7 +48,7 @@ class myElementShadow extends HTMLElement {
     </style>
         `;
   }
-
+  // === Add "ShadowRoot" ===
   render() {
     this.shadowRoot.appendChild(
       this.getTemplateShadow().content.cloneNode(true)
