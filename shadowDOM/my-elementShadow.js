@@ -1,7 +1,5 @@
-//** === === === ==== =============== Shadow DOM & ROOT & Slot ======================= === === === ===  */
-
+//** === === === === =============== =============== ==========  Shadow DOM & ROOT & Slot ========== =================  ======================= === === === ===  */
 //**TODO === === Web Component & Shadow DOM  */
-
 //*? Slot => === En el slot tendremos el texto que tenemos en la etiqueta de my element && Multiple Content Slot ===  */
 class myElementShadow extends HTMLElement {
   constructor() {
@@ -24,9 +22,8 @@ class myElementShadow extends HTMLElement {
                 </h3>
             </div>
             <div>
-                <slot name="title"></slot>
-                <slot name="paragraph"></slot>
-                <slot name="paragraphTwo"></slot>
+                <slot name="titlePlus"></slot>
+                <slot name="paragraphPlus"></slot>
             </div>
         </section>
         ${this.getStyle()};
