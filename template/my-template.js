@@ -21,13 +21,13 @@ class myTemplate extends HTMLElement {
   getStyle() {
     return ` 
     <style>
-    section {
+      section {
         width: 100%;
         margin: 1rem auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+      }
     </style>
     `;
   }

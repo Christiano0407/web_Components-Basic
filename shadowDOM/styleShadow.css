@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  background: #fff;
+}
+
+main {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  font-weight: 900;
+}
