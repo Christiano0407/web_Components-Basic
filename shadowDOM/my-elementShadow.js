@@ -19,13 +19,14 @@ class myElementShadow extends HTMLElement {
                 <h3 class="title-text">Shadow DOM & Web Component!</h3>
             </div>
             <div>
-              <h3>
-                <slot></slot>
-              </h3>
+                <h3>
+                    <slot></slot>
+                </h3>
             </div>
             <div>
-               <slot name="title"></slot>
-               <slot name="paragraph"></slot>
+                <slot name="title"></slot>
+                <slot name="paragraph"></slot>
+                <slot name="paragraphTwo"></slot>
             </div>
         </section>
         ${this.getStyle()};
