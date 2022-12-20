@@ -37,7 +37,7 @@ class myElementHost extends HTMLElement {
   getTemplateShadow() {
     const hostTemplate = document.createElement(`template`);
 
-    hostTemplate.innerHTML = ` 
+    hostTemplate.innerHTML = `
         <section>
             <h1>
                 <slot name="title"></slot>
