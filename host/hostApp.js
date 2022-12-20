@@ -93,6 +93,10 @@ class myElementHost extends HTMLElement {
                 max-width: 100%;
                 border: 8px solid #333; 
            }
+
+           ::slotted(.paragraph) {
+            color: #888;
+           }
         </style>
         `;
   }
