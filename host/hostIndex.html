@@ -9,6 +9,7 @@
   </head>
   <body>
     <main>
+      <!-- ====== Pseudo Class ====== -->
       <my-element>
         <span slot="title">Hello World!! Host</span>
         <span slot="paragraph">Text with Example Host!!</span>
@@ -32,6 +33,14 @@
           <span slot="paragraph">Text with Example Host!!</span>
         </my-element>
       </article>
+
+      <!-- ====== Pseudo element ====== -->
+      <my-element>
+        <span slot="title">Hello World!! PseudoElement ::slotted</span>
+        <span slot="paragraph"
+          >Text with Example PseudoElement ::slotted!!</span
+        >
+      </my-element>
     </main>
 
     <!-- === Javascript === -->
