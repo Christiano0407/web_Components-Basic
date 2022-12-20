@@ -1,9 +1,10 @@
-//** === =================================================================== HOST (:host) (Pseudo Class) ========================================================= ===  */
-//**TODO === ====== (::slotted) (Pseudo Element) ====== === */
+//** === =================================================================== HOST (:host) (Pseudo Class) >= (01) ========================================================= ===  */
+//**TODO === ====== (::slotted) (Pseudo Element) ====== === >= (02) */
+//*? === ====== CSS CUSTOM PROPERTIES (CSS Style && Variable && Specificidad css) ====== === >= (03) */
 class myElementHost extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' }); // => Shadow
+    this.attachShadow({ mode: 'open' }); // => Shadow DOM
     //=== Add Attributes
     /* this.title = this.getAttribute(`title`);
     this.paragraph = this.getAttribute(`paragraph`);
@@ -61,6 +62,12 @@ class myElementHost extends HTMLElement {
                 padding: 1rem;
                 min-width: 480px;
                 max-width: 780px;
+
+                --primary-color: #386641;
+                --secondary-color: #48cae4;
+                --color-title: #212529;
+                --color-text: #343a40;
+                --font-title: 40px;
             }
 
             :host(.blue) {
@@ -76,14 +83,15 @@ class myElementHost extends HTMLElement {
             }
 
             :host([yellow]) h1 {
-                font-size: 30px;
+                font-size: var(--font-title);
                 font-weight: 900;
+                color: var(--color-title);
             }
 
             :host([yellow]) p {
                 font-size: 18px;
                 font-weight: 500;
-                color: #333;
+                color: var(--color-text);
             }
 
             :host-context(article.card) {

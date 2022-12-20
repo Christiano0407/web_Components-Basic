@@ -3,6 +3,11 @@
   box-sizing: border-box;
   object-fit: cover;
 }
+/* === Variables CSS Style ===  */
+:root {
+  --background-color: #ffffff;
+  --color-base: #333;
+}
 
 html {
   font-size: 62.5%;
@@ -41,4 +46,18 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+/* === Shadow DOM => CSS === */
+
+my-element {
+  --primary-color: #386641;
+  --secondary-color: #48cae4;
+  --color-title: #212529;
+  --color-text: #343a40;
+  --font-title: 40px;
+}
+
+.customElement {
+  border: 6px solid var(--secondary-color);
 }
