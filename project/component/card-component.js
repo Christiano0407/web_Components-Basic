@@ -11,4 +11,4 @@ class myComponent extends HTMLAreaElement {
   connectedCallback() {}
 }
 
-customElements.define(`my-element`, myComponent);
+customElements.define(`my-productCard`, myComponent);
