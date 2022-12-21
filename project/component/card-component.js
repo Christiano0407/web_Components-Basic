@@ -42,9 +42,9 @@ class myElement extends HTMLElement {
         </section>
         <section class="container_details">
             <div class="details-content">
-                <h2>${this.title}</h2>
-                <p>${this.collection}</p>
-                <h3>${this.description}</h3>
+                <h2>${this.title} <span>${this.collection}</span> </h2>
+                <p>${this.description}</p>
+                <h3>${this.price}</h3>
                 <button></button>
             </div>
         </section>
@@ -123,6 +123,32 @@ class myElement extends HTMLElement {
             box-sizing: border-box;
             padding: 40px;
             outline: 2px solid black;
+        }
+
+        .container_details h2 {
+            margin-bottom: 25px;
+            font-size:  2.5em;
+            line-height: 1.2em;
+            color: #444;
+        }
+
+        .container_details h2 span {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+        }
+
+        .container_details p {
+            max-width: 85%;
+            margin-left: 5%;
+            margin-bottom: 35px;
+            color: #333;
+            font-size: 14px
+        }
+
+        .container_details h3 {
+
         }
 
     </style>
