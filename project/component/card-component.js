@@ -181,7 +181,6 @@ class myElement extends HTMLElement {
                 padding: 40px;
                 box-sizing: border-box;
                 height: auto;
-                transform: rotate(0deg);
             }
 
             .container .imgBox img {
