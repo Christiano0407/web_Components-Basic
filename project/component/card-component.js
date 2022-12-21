@@ -190,6 +190,7 @@ class myElement extends HTMLElement {
                 object-fit: cover;
                 height: auto;
                 padding: 20px;
+                transform: rotate(0);
             }
 
             .container .container_details {
