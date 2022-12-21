@@ -45,7 +45,7 @@ class myElement extends HTMLElement {
                 <h2>${this.title} <span>${this.collection}</span> </h2>
                 <p>${this.description}</p>
                 <h3>${this.price}</h3>
-                <button></button>
+                <button>Buy</button>
             </div>
         </section>
     </main>
@@ -99,7 +99,7 @@ class myElement extends HTMLElement {
             position: absolute;
             top: 20px;
             left: 20px;
-            font-size: 80px;
+            font-size: 8em;
             font-family: var(--font-family-orbitron);
             font-weight: 900;
             opacity: 0.1;
@@ -141,13 +141,71 @@ class myElement extends HTMLElement {
 
         .container_details p {
             max-width: 85%;
-            margin-left: 5%;
+            margin-left: 10%;
             margin-bottom: 35px;
             color: #333;
             font-size: 14px
         }
 
         .container_details h3 {
+            float: left;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .container_details button {
+            float: right;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: var(--background-color-white);
+            font-size: 2.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+
+        @media (max-width: 1080px) {
+            .container {
+                width: auto;
+                height: auto;
+            }
+
+            .container .imgBox {
+                width: 100%;
+                padding: 40px;
+                box-sizing: border-box;
+                height: auto;
+                transform: rotate(0deg);
+            }
+
+            .container .imgBox img {
+                width: 100%;
+                left: initial;
+                object-fit: cover;
+                height: auto;
+                padding: 20px;
+            }
+
+            .container .container_details {
+                width: 100%;
+                height: auto;
+                padding: 20px;
+            }
+
+            .container .container_details span {
+                font-size: 0.8em;
+            }
+
+            .container .container_details p {
+                max-width: 100%;
+                margin-left: 0;
+            }
 
         }
 
