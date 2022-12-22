@@ -107,4 +107,4 @@ dist
 .node_module
 
 # API SECRET 
-apiProject/secret/secret.js
+/apiProject/secrets/secrets.js
