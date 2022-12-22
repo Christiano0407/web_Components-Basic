@@ -130,6 +130,7 @@ class myElement extends HTMLElement {
             font-size:  2.5em;
             line-height: 1.2em;
             color: #444;
+            font-family: var(--font-family-orbitron);
         }
 
         .container_details h2 span {
@@ -155,7 +156,7 @@ class myElement extends HTMLElement {
 
         .container_details button {
             float: right;
-            padding: 15px 20px;
+            padding: 10px 20px;
             border: none;
             outline: none;
             background-color: var(--primary-color);
@@ -165,6 +166,7 @@ class myElement extends HTMLElement {
             text-transform: uppercase;
             border-radius: 10px;
             cursor: pointer;
+            margin: 10px auto
         }
         button:active {
             transform: scale(0.9);
@@ -207,8 +209,20 @@ class myElement extends HTMLElement {
                 margin-left: 0;
             }
 
-        }
+         }
 
+        @media (min-width: 1081px) {
+
+            .container .container_details h2 {
+              font-size: 2.7em;
+              font-weight: 900;
+            }
+            
+            .container .container_details h2 span {
+              font-size: 0.7em;
+            }
+
+        }
     </style>
     `;
   }
