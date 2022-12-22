@@ -11,23 +11,23 @@ class myElement extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
-    if (attr === 'img') {
+    if (attr === 'img' && oldVal !== newVal) {
       this.img = newVal;
     }
 
-    if (attr === 'title') {
+    if (attr === 'title' && oldVal !== newVal) {
       this.title = newVal;
     }
 
-    if (attr === 'collection') {
+    if (attr === 'collection' && oldVal !== newVal) {
       this.collection = newVal;
     }
 
-    if (attr === 'description') {
+    if (attr === 'description' && oldVal !== newVal) {
       this.description = newVal;
     }
 
-    if (attr === 'price') {
+    if (attr === 'price' && oldVal !== newVal) {
       this.price = newVal;
     }
   }
@@ -91,7 +91,6 @@ class myElement extends HTMLElement {
             width: 50%;
             height: 100%;
             background-color: var(--primary-color);
-            outline: 2px solid red;
         }
 
         .container .imgBox::before {
@@ -122,7 +121,6 @@ class myElement extends HTMLElement {
             height: 100%;
             box-sizing: border-box;
             padding: 40px;
-            outline: 2px solid black;
         }
 
         .container_details h2 {
@@ -221,6 +219,10 @@ class myElement extends HTMLElement {
             .container .container_details h2 span {
               font-size: 0.7em;
             }
+
+             .container .imgBox::before  {
+              font-size: 10em;
+             }
 
         }
     </style>
