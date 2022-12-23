@@ -1,5 +1,9 @@
 //**todo === === ========================== Movie API REST Component =============================== === ===  */
 //** === API KEY */
+import { API_KEY } from '../secrets/secrets.js';
+const API_POPULAR = `https://api.themoviedb.org/3/movie/popular/?page=1&api_key=${API_KEY}`;
+let popularMoviesNew = ``;
+
 //** === Component */
 
 class myElement extends HTMLElement {
@@ -9,7 +13,7 @@ class myElement extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return [`img`, `title`, 'movie'];
+    return [`img`, `title`, 'movie', `movies`];
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
@@ -19,6 +23,10 @@ class myElement extends HTMLElement {
 
     if (attr === 'movie' && oldVal !== newVal) {
       this.movie = newVal;
+    }
+
+    if (attr === `movies`) {
+      this.movies = newVal;
     }
   }
 
@@ -44,12 +52,42 @@ class myElement extends HTMLElement {
     return template;
   }
 
-  /*  getMovies() {
+  getMovies() {
     const templateNew = document.createElement(`template`);
 
-    return templateNew;
-  } */
+    const getMovie = async () => {
+      try {
+        const response = await fetch(API_POPULAR, {
+          method: `GET`,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
 
+        const dataPopular = await response.json();
+        console.log(dataPopular);
+
+        dataPopular.forEach((movies) => {
+          templateNew.innerHTML = `
+              <section>
+                  <div class="moviesPopular-container">
+                      <img
+                        src="https://image.tmdb.org/t/p/w500/${movies.poster_path}"
+                        class="moviePopular-img"
+                        alt="movies-Popular"
+                      />
+                  </div>
+              </section>
+            `;
+        });
+      } catch (error) {
+        console.log('We have Error!');
+      }
+    };
+    getMovie();
+    return templateNew;
+  }
+  // https://image.tmdb.org/t/p/w500/${movies.poster_path
   getStyle() {
     return `
     <style>
@@ -95,6 +133,7 @@ class myElement extends HTMLElement {
 
   render() {
     this.shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
+    this.shadowRoot.append(this.getMovies().content.cloneNode(true));
   }
 
   connectedCallback() {
