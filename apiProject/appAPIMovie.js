@@ -3,4 +3,4 @@
 //*? === API KEY */
 //import { API_KEY } from './secrets/secrets';
 import './apiComponent/movies-component.js';
-import './apiComponent/movie-list.js';
+/* import './apiComponent/movie-list.js'; */

@@ -10,6 +10,7 @@ class myElement extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: `open` });
+    this.modePicture = false;
   }
 
   static get observedAttributes() {
